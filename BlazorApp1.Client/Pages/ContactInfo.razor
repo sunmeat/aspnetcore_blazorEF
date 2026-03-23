@@ -1,4 +1,4 @@
-﻿@using System.ComponentModel.DataAnnotations
+@using System.ComponentModel.DataAnnotations
 @using Blazored.Toast.Services
 @using Microsoft.AspNetCore.Components.Forms
 @using System.Text
@@ -212,7 +212,7 @@
                 ShowPhone = FormModel.ShowPhone
             };
 
-            Logger.LogInformation("Відправляємо POST → /api/contact");
+            Logger.LogInformation("Відправляємо POST > /api/contact");
 
             var response = await Http.PostAsJsonAsync("api/contact", payload);
 
@@ -225,7 +225,7 @@
             else
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
-                Logger.LogWarning("Помилка API: {StatusCode} → {Response}",
+                Logger.LogWarning("Помилка API: {StatusCode} > {Response}",
                     response.StatusCode, errorContent);
 
                 string errorMessage = response.StatusCode switch
